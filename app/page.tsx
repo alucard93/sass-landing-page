@@ -3,6 +3,16 @@ import logo from './assets/logo.svg'
 import woman from './assets/woman.svg'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { Check } from 'lucide-react'
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 
 export default function Home() {
   return (
@@ -50,42 +60,80 @@ export default function Home() {
           </p>
         </form>
       </section>
+
       {/* 2ª SEÇÃO */}
-      <section className="bg-white">
-        <h2>Como funciona?</h2>
-        <Image
-          src={woman}
-          alt="Woman"
-          style={{ width: 'auto', height: 'auto' }}
-        />
-        <ul>
-          <li>Acesso a 1 ebook por mês</li>
-          <li>Curadoria especial</li>
-          <li>Cancele quando quiser</li>
-        </ul>
+      <section className="bg-white py-16">
+        <div className="mx-auto container">
+          <h2 className="text-center text-4xl font-bold">Como funciona?</h2>
+          <div className="flex items-center justify-between max-w-3xl mx-auto">
+            <Image
+              src={woman}
+              alt="Woman"
+              style={{ width: 'auto', height: 'auto' }}
+            />
+            <ul className="text-2xl text-muted-foreground space-y-6 shrink-0">
+              <li className="flex items-center justify-between gap-4">
+                Acesso a 1 ebook por mês{' '}
+                <Check className="text-green-600" size={24} />
+              </li>
+              <li className="flex items-center justify-between gap-4">
+                Curadoria especial{' '}
+                <Check className="text-green-600" size={24} />
+              </li>
+              <li className="flex items-center justify-between gap-4">
+                Cancele quando quiser{' '}
+                <Check className="text-green-600" size={24} />
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
-      <section>
-        <h2>Preço simples e transparente</h2>
-        <p>
+      <section className="py-16 text-center">
+        <h2 className="text-6xl font-bold ">Preço simples e transparente</h2>
+        <p className="text-gray-500 mt-4 text-xl max-w-3xl mx-auto">
           Pra que inúmeros planos quando nós sabemos exatamente o que é melhor
           para você? Assine o nosso plano mensal Pro Premium VIP e garanta
           mensalmente um ebook novo de programação. E por menos de um café por
           dia.{' '}
         </p>
-        <div>
-          <h3>Plano Pro Premiun VIP</h3>
-        </div>
-        <p>Tudo que você precisa para seus estudos</p>
-        <p>R$29/mês</p>
 
-        <ul>
-          <li>1 ebook por mês</li>
-          <li>Curadoria especial</li>
-          <li>Acesso ilimitado</li>
-          <li>Cancele a qualquer momento</li>
-        </ul>
-        <button>Assina Agora</button>
+        <Card className="w-full max-w-87.5 mx-auto text-left mt-20">
+          <CardHeader>
+            <CardTitle>Plano Pro Premiun VIP</CardTitle>
+            <CardDescription>
+              Tudo que você precisa para seus estudos
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="text-4xl font-bold mb-8 mt-4">
+              R$29
+              <span className="font-normal text-muted-foreground text-lg">
+                /mês
+              </span>
+            </p>
+            <ul>
+              <li className="flex shrink-0 gap-2 text-muted-foreground">
+                <Check size={16} className="text-green-600" /> Acesso a 1 ebook
+                por mês
+              </li>
+              <li className="flex shrink-0 gap-2 text-muted-foreground">
+                <Check size={16} className="text-green-600" /> Curadoria
+                especial
+              </li>
+              <li className="flex shrink-0 gap-2 text-muted-foreground">
+                <Check size={16} className="text-green-600" /> Acesso ilimitado
+              </li>
+              <li className="flex shrink-0 gap-2 text-muted-foreground">
+                <Check size={16} className="text-green-600" /> Cancele a
+                qualquer momento
+              </li>
+            </ul>
+          </CardContent>
+          <CardFooter className="border-none bg-transparent">
+            <Button className="h-10 w-full">Assina Agora</Button>
+          </CardFooter>
+        </Card>
       </section>
 
       <section className="bg-white">
