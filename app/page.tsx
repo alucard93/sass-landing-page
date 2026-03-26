@@ -2,11 +2,12 @@ import Image from 'next/image'
 import logo from './assets/logo.svg'
 import woman from './assets/woman.svg'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 
 export default function Home() {
   return (
     <main>
-      <section className="container mx-auto">
+      <section className="container mx-auto text-center pb-20">
         <nav className="flex justify-between items-center py-4">
           <div>
             <Image
@@ -29,16 +30,24 @@ export default function Home() {
             </li>
           </ul>
         </nav>
-        <h1>Simplifique Seus Estudos</h1>
-        <p>
+        <h1 className="text-6xl font-bold  mt-16">Simplifique Seus Estudos</h1>
+        <p className="text-gray-500 mt-4 text-xl max-w-3xl mx-auto">
           Deixe que nós fazermos a curadoria para você. Assine nossa plataforma
           e receba todos os meses um ebook novo de programação.
         </p>
 
-        <form action="">
-          <input type="text" placeholder="Coloque seu email" />
-          <button>Assine Agora</button>
-          <p>Comece sua assinatura agora mesmo. Cancele quando quiser.</p>
+        <form action="" className="mt-16 ">
+          <div className="flex gap-2 justify-center">
+            <Input
+              type="text"
+              className="max-w-sm border border-gray-300 h-10"
+              placeholder="Coloque seu email"
+            />
+            <Button className="h-10">Assine Agora</Button>
+          </div>
+          <p className="text-xs text-muted-foreground mt-2">
+            Comece sua assinatura agora mesmo. Cancele quando quiser.
+          </p>
         </form>
       </section>
       {/* 2ª SEÇÃO */}
