@@ -3,7 +3,7 @@ import logo from './assets/logo.svg'
 import woman from './assets/woman.svg'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Check } from 'lucide-react'
+import { Check, MenuIcon } from 'lucide-react'
 
 import {
   Card,
@@ -17,7 +17,7 @@ import {
 export default function Home() {
   return (
     <main>
-      <section className="container mx-auto text-center pb-20">
+      <section className="container mx-auto text-center pb-20 px-2 md:px-0">
         <nav className="flex justify-between items-center py-4">
           <div>
             <Image
@@ -28,7 +28,9 @@ export default function Home() {
               style={{ width: 'auto', height: 'auto' }}
             />
           </div>
-          <ul className="flex gap-1">
+
+          <MenuIcon className="md:hidden cursor-pointer" size={24} />
+          <ul className=" gap-1 hidden md:flex">
             <li>
               <Button variant={'link'}>Funcionamento</Button>
             </li>
@@ -40,13 +42,15 @@ export default function Home() {
             </li>
           </ul>
         </nav>
-        <h1 className="text-6xl font-bold  mt-16">Simplifique Seus Estudos</h1>
-        <p className="text-gray-500 mt-4 text-xl max-w-3xl mx-auto">
+        <h1 className="text-2xl md:text-6xl font-bold mt-8 md:mt-16">
+          Simplifique Seus Estudos
+        </h1>
+        <p className="text-gray-500 mt-4 text-sm md:text-xl max-w-3xl mx-auto">
           Deixe que nós fazermos a curadoria para você. Assine nossa plataforma
           e receba todos os meses um ebook novo de programação.
         </p>
 
-        <form action="" className="mt-16 ">
+        <form action="" className="mt-10 md:mt-16 ">
           <div className="flex gap-2 justify-center">
             <Input
               type="text"
@@ -62,16 +66,19 @@ export default function Home() {
       </section>
 
       {/* 2ª SEÇÃO */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-8 md:py-16">
         <div className="mx-auto container">
-          <h2 className="text-center text-4xl font-bold">Como funciona?</h2>
-          <div className="flex items-center justify-between max-w-3xl mx-auto">
+          <h2 className="text-center text-2xl md:text-4xl font-bold">
+            Como funciona?
+          </h2>
+          <div className="flex flex-col md:flex-row items-center justify-between max-w-3xl mx-auto">
             <Image
               src={woman}
               alt="Woman"
+              className="max-w-xs md:max-w-none"
               style={{ width: 'auto', height: 'auto' }}
             />
-            <ul className="text-2xl text-muted-foreground space-y-6 shrink-0">
+            <ul className="text-lg md:text-2xl text-muted-foreground space-y-4 md:space-y-6 shrink-0">
               <li className="flex items-center justify-between gap-4">
                 Acesso a 1 ebook por mês{' '}
                 <Check className="text-green-600" size={24} />
@@ -89,16 +96,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 text-center">
-        <h2 className="text-6xl font-bold ">Preço simples e transparente</h2>
-        <p className="text-gray-500 mt-4 text-xl max-w-3xl mx-auto">
+      <section className="py-8 md:py-16 text-center px-2 md:px-0">
+        <h2 className="text-2xl md:text-6xl font-bold md:mt-16 ">
+          Preço simples e transparente
+        </h2>
+        <p className="text-gray-500 mt-4 text-sm md:text-xl max-w-3xl mx-auto">
           Pra que inúmeros planos quando nós sabemos exatamente o que é melhor
           para você? Assine o nosso plano mensal Pro Premium VIP e garanta
           mensalmente um ebook novo de programação. E por menos de um café por
           dia.{' '}
         </p>
 
-        <Card className="w-full max-w-87.5 mx-auto text-left mt-20">
+        <Card className="w-full max-w-87.5 mx-auto text-left mt-10 md:mt-20">
           <CardHeader>
             <CardTitle>Plano Pro Premiun VIP</CardTitle>
             <CardDescription>
@@ -136,23 +145,32 @@ export default function Home() {
         </Card>
       </section>
 
-      <section className="bg-white">
-        <h2>Pronto Para Mudar Sua Vida?</h2>
-        <p>
+      <section className="bg-white py-8 md:py-16 text-center">
+        <h2 className="text-2xl md:text-6xl font-bold  md:mt-16">
+          Pronto Para Mudar Sua Vida?
+        </h2>
+        <p className="text-gray-500 mt-4 text-sm md:text-xl max-w-xl lg:max-w-3xl mx-auto">
           Faça como milhares de outras pessoas. Assine nosso produto e tenha
           garantido seus estudos{' '}
         </p>
-        <button>Assine Agora</button>
-        <p>Comece sua assinatura agora mesmo. Cancele quando quiser. </p>
-        <footer>
+        <Button className="mt-14 w-full max-w-74 md:max-w-96 h-10">
+          Assine Agora
+        </Button>
+        <p className="text-xs text-muted-foreground mt-2">
+          Comece sua assinatura agora mesmo. Cancele quando quiser.{' '}
+        </p>
+        <footer className="mt-16  border-t border-gray-300 pt-10">
           <Image
+            className="mx-auto"
             src={logo}
             alt="Logo"
             width={16}
             height={16}
             style={{ width: 'auto', height: 'auto' }}
           />
-          <p>© 2024 LivroSaaS. Todos os direitos reservados.</p>
+          <p className="text-muted-foreground">
+            © 2024 LivroSaaS. Todos os direitos reservados.
+          </p>
         </footer>
       </section>
     </main>
