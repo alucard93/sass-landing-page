@@ -14,6 +14,14 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+
 export default function Home() {
   return (
     <main>
@@ -29,7 +37,19 @@ export default function Home() {
             />
           </div>
 
-          <MenuIcon className="md:hidden cursor-pointer" size={24} />
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <MenuIcon className="md:hidden cursor-pointer" size={24} />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="mt-4">
+              <DropdownMenuItem>Funcionamento</DropdownMenuItem>
+              <DropdownMenuItem>Preço</DropdownMenuItem>
+              <DropdownMenuItem>
+                <Button variant={'bg-white'}>Login</Button>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <ul className=" gap-1 hidden md:flex">
             <li>
               <Button variant={'link'}>Funcionamento</Button>
